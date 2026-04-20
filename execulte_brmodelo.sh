@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# Este script executa o BRmodelo.
-# O script usa Zenity para interface gráfica, normalmente vem instalado em distros com gnome.
-# Se não tiver instalado, instale com o comando: 
-# debian/ubuntu: sudo apt install zenity
-# fedora: sudo dnf install zenity
-# arch: sudo pacman -S zenity
-
 # execução do programa
+
+# Arquivo temporário para a senha
+PASS_FILE=$(mktemp)
+chmod 600 "$PASS_FILE"
+trap 'rm -f "$PASS_FILE"' EXIT
 
 PASSWORD=$(zenity --password --title="Autenticação brModelo")
 
@@ -16,4 +14,20 @@ if [ -z "$PASSWORD" ]; then
     exit 1
 fi
 
-echo "$PASSWORD" | sudo -S java -jar ./brModelo.jar
+printf '%s\n' "$PASSWORD" > "$PASS_FILE"
+unset PASSWORD
+
+if ! sudo -S -k < "$PASS_FILE" true 2>/dev/null; then
+    zenity --error --text="Senha incorreta. Operação cancelada."
+    exit 1
+fi
+
+# checa se o brModelo está instalado
+
+if [ ! -f ./brModelo.jar ]; then
+    zenity --error --text="Arquivo brModelo.jar não encontrado.\nExecute primeiro o script de instalação."
+    exit 1
+fi
+
+#Executa o BRmodelo
+sudo -S -k < "$PASS_FILE" java -jar ./brModelo.jar

@@ -4,6 +4,8 @@ Este repositório contém scripts para auxiliar na instalação e execução do 
 
 brmodelo é um software livre desenvolvido para auxiliar no ensino e desenvolvimento de banco de dados relacionais. Desenvolvido por Ronaldo dos Santos Mello. mais informações em: https://www.sis4.com/brModelo/
 
+> Este projeto é apenas uma ferramenta de auxilio e não tem vinculos com os desenvolvedores do brModelo.
+
 ## Observações
 
 - Zenity: Normalmente já vem instalado em distros com gnome, caso contrário instale com o comando: debian/ubuntu: ``sudo apt install zenity``; fedora: ``sudo dnf install zenity``; arch: ``sudo pacman -S zenity``
