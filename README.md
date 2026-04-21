@@ -24,7 +24,7 @@ brmodelo é um software livre desenvolvido para auxiliar no ensino e desenvolvim
 git clone https://github.com/radiante-dev/brmodelo-linux.git
 ```
 
-2. Dê permissão de execução aos scripts caso seja necessário:
+2. Dê permissão de execução aos scripts, caso seja necessário:
 ```bash
 chmod +x *.sh
 ```
@@ -41,4 +41,19 @@ Para executar o brModelo:
 ./execulte_brmodelo.sh
 ```
 
+## Atalho no menu principal
+
+Para criar um atalho no menu principal, crie um arquivo "brmodelo.desktop" na pasta "~/.local/share/applications/" com o seguinte conteúdo:
+
+```ini
+[Desktop Entry]
+Version=1.0
+Name=brModelo
+Comment=brModelo - Ferramenta para Modelagem de Banco de Dados
+Exec=sh /path/to/execulte_brmodelo.sh # Caminho para o script
+Icon=/path/to/icon.png # Icone
+Terminal=false
+Type=Application
+Categories=Development;
+```
 
