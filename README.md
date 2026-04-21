@@ -1,10 +1,8 @@
 # brModelo-linux
 
-Este repositório contém scripts para auxiliar na instalação e execução do brModelo no Linux.
+Este repositório contém scripts para auxiliar na instalação e execução do brModelo no Linux, são totalmente livres, altere e modifique. O criador desse repositório não tem vinculos com os desenvolvedores do brModelo e não se responsabiliza por quaisquer problemas que possam ocorrer com o mau uso dos scripts.
 
 brmodelo é um software livre desenvolvido para auxiliar no ensino e desenvolvimento de banco de dados relacionais. Desenvolvido por Ronaldo dos Santos Mello. mais informações em: https://www.sis4.com/brModelo/
-
-> Este projeto é apenas uma ferramenta de auxilio e não tem vinculos com os desenvolvedores do brModelo.
 
 ## Observações
 
@@ -21,7 +19,7 @@ brmodelo é um software livre desenvolvido para auxiliar no ensino e desenvolvim
 
 1. Clone o repositório ou baixe:
 ```bash
-git clone https://github.com/radiante-dev/brmodelo-linux.git
+git clone https://github.com/joaopedro-chaves/brmodelo-linux
 ```
 
 2. Dê permissão de execução aos scripts, caso seja necessário:
@@ -56,4 +54,3 @@ Terminal=false
 Type=Application
 Categories=Development;
 ```
-
